@@ -27,7 +27,7 @@ const Home: React.FC = () => {
         <p className="text-neutral-700">
           Check out the{" "}
           <a
-            href="https://github.com/your-username/reactquest-code-challenges"
+            href="https://github.com/ijas9118/my-react-practice"
             target="_blank"
             rel="noopener noreferrer"
             className="underline hover:text-neutral-500 transition"

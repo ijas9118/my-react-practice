@@ -18,7 +18,7 @@ const Layout: React.FC = () => {
                 </Link>
               </li>
               <li>
-                <Link to="/#challenges" className="hover:text-neutral-300 transition">
+                <Link to="/challenges" className="hover:text-neutral-300 transition">
                   Challenges
                 </Link>
               </li>
