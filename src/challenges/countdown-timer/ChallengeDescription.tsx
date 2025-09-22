@@ -1,4 +1,4 @@
-import { GithubIcon } from "lucide-react";
+import { GithubIcon, Link } from "lucide-react";
 import React from "react";
 
 const CountdownTimerDoc: React.FC = () => {
@@ -58,8 +58,19 @@ const CountdownTimerDoc: React.FC = () => {
           </ul>
         </section>
 
-        {/* GitHub Link */}
         <div className="flex items-center space-x-3 border-t border-neutral-200 pt-6">
+          <Link className="w-5 h-5 text-neutral-600" />
+          <a
+            href="https://frontendeval.com/questions/countdown-timer"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-blue-600 hover:text-blue-800 font-medium"
+          >
+            Problem Link
+          </a>
+        </div>
+
+        <div className="flex items-center space-x-3 border-neutral-200 pt-6">
           <GithubIcon className="w-5 h-5 text-neutral-600" />
           <a
             href="https://github.com/ijas9118/my-react-practice/blob/main/src/challenges/countdown-timer/CountdownTimer.tsx"
@@ -67,7 +78,7 @@ const CountdownTimerDoc: React.FC = () => {
             rel="noopener noreferrer"
             className="text-blue-600 hover:text-blue-800 font-medium"
           >
-            View on GitHub
+            Checkout my solution
           </a>
         </div>
       </div>

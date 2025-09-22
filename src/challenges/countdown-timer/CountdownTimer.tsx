@@ -72,6 +72,7 @@ const CountdownTimer: React.FC = () => {
         >
           <ArrowLeft size={16} /> <span>Back</span>
         </button>
+        <h3 className="text-3xl font-serif">Countdown Timer</h3>
       </div>
 
       <div className="py-16 border border-neutral-300 rounded-lg">
