@@ -24,7 +24,7 @@ const Layout: React.FC = () => {
               </li>
               <li>
                 <a
-                  href="https://github.com/your-username/reactquest-code-challenges"
+                  href="https://github.com/ijas9118/my-react-practice"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:text-neutral-300 transition"
