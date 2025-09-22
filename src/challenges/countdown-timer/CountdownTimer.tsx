@@ -1,8 +1,11 @@
-import { ArrowLeft } from "lucide-react";
 import React, { useCallback, useEffect, useState } from "react";
 import { InputField } from "./InputField";
+import { useNavigate } from "react-router-dom";
+import { ArrowLeft } from "lucide-react";
+import CountdownTimerDoc from "./ChallengeDescription";
 
 const CountdownTimer: React.FC = () => {
+  const navigate = useNavigate();
   const [isRunning, setIsRunning] = useState(false);
   const [time, setTime] = useState<{ hh: string; mm: string; ss: string }>({
     hh: "",
@@ -63,14 +66,15 @@ const CountdownTimer: React.FC = () => {
   return (
     <div className="space-y-8">
       <div className="flex items-center gap-4">
-        <button className="bg-neutral-100 shadow rounded-lg py-1 px-4 flex items-center gap-2">
+        <button
+          className="bg-neutral-100 shadow rounded-lg py-1 px-4 flex items-center gap-2"
+          onClick={() => navigate(-1)}
+        >
           <ArrowLeft size={16} /> <span>Back</span>
         </button>
-
-        <h3 className="text-3xl font-serif">Countdown Timer</h3>
       </div>
 
-      <div className="py-8 ">
+      <div className="py-16 border border-neutral-300 rounded-lg">
         <h3 className="text-4xl text-center font-semibold">Countdown Timer</h3>
         <div className="mt-8 flex flex-col items-center justify-center gap-8">
           <div className="flex items-center gap-3">
@@ -148,6 +152,8 @@ const CountdownTimer: React.FC = () => {
           </div>
         </div>
       </div>
+
+      <CountdownTimerDoc />
     </div>
   );
 };
