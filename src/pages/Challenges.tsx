@@ -12,7 +12,7 @@ const Challenges: React.FC = () => {
   return (
     <div className="min-h-screen flex justify-center px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl w-full">
-        <h2 className="text-3xl font-serif font-bold text-neutral-900 mb-8">Challenges</h2>
+        <h2 className="text-3xl font-serif font-medium text-neutral-700 mb-8">Challenges</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {challengesData.map((challenge) => (
             <Link

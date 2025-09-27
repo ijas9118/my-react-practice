@@ -17,7 +17,7 @@ const EvenOrOddDocs = () => {
 
       <section>
         <h2 className="text-2xl font-serif font-semibold text-neutral-800 mb-4">Requirements</h2>
-        <ul className="list-decimal list-outside pl-6 space-y-2 text-neutral-700">
+        <ul className="list-decimal list-outside pl-6 space-y-2">
           <li>A user can enter a number in an input field.</li>
           <li>
             The input box should have a placeholder: <code>"Enter a number"</code>
