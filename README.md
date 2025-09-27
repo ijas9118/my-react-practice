@@ -1,3 +1,5 @@
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 # ReactQuest: Frontend Machine Coding Challenges
 
 Welcome to **ReactQuest**, a personal project documenting my journey to master frontend development through hands-on machine coding challenges.
