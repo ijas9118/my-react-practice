@@ -18,7 +18,6 @@ const challengesData: Challenge[] = [
     description: "Create a React counter with increment, decrement, and reset functionalities.",
     path: "/challenges/counter",
   },
-  // Add more challenges here if needed
 ];
 
 const Challenges: React.FC = () => {

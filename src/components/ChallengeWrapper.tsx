@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 
 const challengeMap: Record<string, React.LazyExoticComponent<React.FC>> = {
   "countdown-timer": lazy(() => import("../challenges/countdown-timer/CountdownTimer")),
+  "counter": lazy(() => import("../challenges/counter/Counter")),
 };
 
 const ChallengeWrapper: React.FC = () => {
