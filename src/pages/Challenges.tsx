@@ -1,24 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { challengesData, type Challenge } from "../data";
 
-interface Challenge {
-  title: string;
-  description: string;
-  path: string;
-}
-
-const challengesData: Challenge[] = [
-  {
-    title: "Countdown Timer",
-    description: "Build a countdown timer with customizable hours, minutes, and seconds.",
-    path: "/challenges/countdown-timer",
-  },
-  {
-    title: "Counter Using React",
-    description: "Create a React counter with increment, decrement, and reset functionalities.",
-    path: "/challenges/counter",
-  },
-];
+const difficultyColors: Record<Challenge["difficulty"], string> = {
+  Easy: "bg-green-100 text-green-800",
+  Medium: "bg-yellow-100 text-yellow-800",
+  Hard: "bg-red-100 text-red-800",
+};
 
 const Challenges: React.FC = () => {
   return (
@@ -32,7 +20,16 @@ const Challenges: React.FC = () => {
               to={challenge.path}
               className="block p-6 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow duration-200 border border-neutral-200 flex-none"
             >
-              <h3 className="text-lg font-semibold text-neutral-800">{challenge.title}</h3>
+              <div className="flex items-center justify-between">
+                <h3 className="text-lg font-semibold text-neutral-800">{challenge.title}</h3>
+                <span
+                  className={`ml-2 px-2 py-0.5 rounded-full text-xs font-medium ${
+                    difficultyColors[challenge.difficulty]
+                  }`}
+                >
+                  {challenge.difficulty}
+                </span>
+              </div>
               <p className="mt-2 text-neutral-600 text-sm">{challenge.description}</p>
             </Link>
           ))}
