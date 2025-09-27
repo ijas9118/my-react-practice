@@ -1,11 +1,9 @@
 import React, { useCallback, useEffect, useState } from "react";
 import { InputField } from "./InputField";
-import { useNavigate } from "react-router-dom";
-import { ArrowLeft } from "lucide-react";
 import CountdownTimerDoc from "./ChallengeDescription";
+import ChallengeLayout from "../../layout/ChallengeLayout";
 
 const CountdownTimer: React.FC = () => {
-  const navigate = useNavigate();
   const [isRunning, setIsRunning] = useState(false);
   const [time, setTime] = useState<{ hh: string; mm: string; ss: string }>({
     hh: "",
@@ -64,98 +62,84 @@ const CountdownTimer: React.FC = () => {
   }, [isRunning, runTimer]);
 
   return (
-    <div className="space-y-8">
-      <div className="flex items-center gap-4">
-        <button
-          className="bg-neutral-100 shadow rounded-lg py-1 px-4 flex items-center gap-2"
-          onClick={() => navigate(-1)}
-        >
-          <ArrowLeft size={16} /> <span>Back</span>
-        </button>
-        <h3 className="text-3xl font-serif">Countdown Timer</h3>
-      </div>
-
-      <div className="py-16 border border-neutral-300 rounded-lg">
-        <h3 className="text-4xl text-center font-semibold">Countdown Timer</h3>
-        <div className="mt-8 flex flex-col items-center justify-center gap-8">
-          <div className="flex items-center gap-3">
-            {!isRunning ? (
-              <>
-                <InputField
-                  placeholder="HH"
-                  value={time.hh}
-                  onChange={(val) => handleChange("hh", val)}
-                />
+    <ChallengeLayout title="Countdown Timer" Docs={CountdownTimerDoc}>
+      <h3 className="text-4xl text-center font-semibold">Countdown Timer</h3>
+      <div className="mt-8 flex flex-col items-center justify-center gap-8">
+        <div className="flex items-center gap-3">
+          {!isRunning ? (
+            <>
+              <InputField
+                placeholder="HH"
+                value={time.hh}
+                onChange={(val) => handleChange("hh", val)}
+              />
+              <span>:</span>
+              <InputField
+                placeholder="MM"
+                value={time.mm}
+                onChange={(val) => handleChange("mm", val)}
+              />
+              <span>:</span>
+              <InputField
+                placeholder="SS"
+                value={time.ss}
+                onChange={(val) => handleChange("ss", val)}
+              />
+            </>
+          ) : (
+            <>
+              <div className="text-3xl font-mono flex items-center gap-2">
+                <span>{time.hh ? (parseInt(time.hh) < 10 ? `0${time.hh}` : time.hh) : "00"}</span>
                 <span>:</span>
-                <InputField
-                  placeholder="MM"
-                  value={time.mm}
-                  onChange={(val) => handleChange("mm", val)}
-                />
+                <span>{time.mm ? (parseInt(time.mm) < 10 ? `0${time.mm}` : time.mm) : "00"}</span>
                 <span>:</span>
-                <InputField
-                  placeholder="SS"
-                  value={time.ss}
-                  onChange={(val) => handleChange("ss", val)}
-                />
-              </>
-            ) : (
-              <>
-                <div className="text-3xl font-mono flex items-center gap-2">
-                  <span>{time.hh ? (parseInt(time.hh) < 10 ? `0${time.hh}` : time.hh) : "00"}</span>
-                  <span>:</span>
-                  <span>{time.mm ? (parseInt(time.mm) < 10 ? `0${time.mm}` : time.mm) : "00"}</span>
-                  <span>:</span>
-                  <span>{time.ss ? (parseInt(time.ss) < 10 ? `0${time.ss}` : time.ss) : "00"}</span>
-                </div>
-              </>
-            )}
-          </div>
-          <div className="flex items-center gap-4">
-            {!isRunning ? (
-              <>
-                <button
-                  className={`font-medium px-4 py-1 rounded ${
-                    isValid
-                      ? "bg-emerald-500 text-white cursor-pointer"
-                      : "bg-gray-300 text-gray-500 cursor-not-allowed"
-                  }`}
-                  disabled={!isValid}
-                  onClick={() => setIsRunning((prev) => !prev)}
-                >
-                  Start
-                </button>
-              </>
-            ) : (
-              <>
-                <button
-                  className={`font-medium px-4 py-1 rounded ${
-                    isValid
-                      ? "bg-orange-500 text-white cursor-pointer"
-                      : "bg-gray-300 text-gray-500 cursor-not-allowed"
-                  }`}
-                  onClick={() => setIsRunning(false)}
-                >
-                  Pause
-                </button>
-                <button
-                  className={`font-medium px-4 py-1 rounded ${
-                    isValid
-                      ? "bg-red-500 text-white cursor-pointer"
-                      : "bg-gray-300 text-gray-500 cursor-not-allowed"
-                  }`}
-                  onClick={handleReset}
-                >
-                  Reset
-                </button>
-              </>
-            )}
-          </div>
+                <span>{time.ss ? (parseInt(time.ss) < 10 ? `0${time.ss}` : time.ss) : "00"}</span>
+              </div>
+            </>
+          )}
+        </div>
+        <div className="flex items-center gap-4">
+          {!isRunning ? (
+            <>
+              <button
+                className={`font-medium px-4 py-1 rounded ${
+                  isValid
+                    ? "bg-emerald-500 text-white cursor-pointer"
+                    : "bg-gray-300 text-gray-500 cursor-not-allowed"
+                }`}
+                disabled={!isValid}
+                onClick={() => setIsRunning((prev) => !prev)}
+              >
+                Start
+              </button>
+            </>
+          ) : (
+            <>
+              <button
+                className={`font-medium px-4 py-1 rounded ${
+                  isValid
+                    ? "bg-orange-500 text-white cursor-pointer"
+                    : "bg-gray-300 text-gray-500 cursor-not-allowed"
+                }`}
+                onClick={() => setIsRunning(false)}
+              >
+                Pause
+              </button>
+              <button
+                className={`font-medium px-4 py-1 rounded ${
+                  isValid
+                    ? "bg-red-500 text-white cursor-pointer"
+                    : "bg-gray-300 text-gray-500 cursor-not-allowed"
+                }`}
+                onClick={handleReset}
+              >
+                Reset
+              </button>
+            </>
+          )}
         </div>
       </div>
-
-      <CountdownTimerDoc />
-    </div>
+    </ChallengeLayout>
   );
 };
 
