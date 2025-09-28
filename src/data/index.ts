@@ -24,4 +24,10 @@ export const challengesData: Challenge[] = [
     path: "/challenges/even-or-odd",
     difficulty: "Easy",
   },
+  {
+    title: "Chips Input",
+    description: "Create a component that allows users to input a tag(chip) and display them with dynamic deletion.",
+    path: "/challenges/chips-input",
+    difficulty: "Easy",
+  },
 ];
