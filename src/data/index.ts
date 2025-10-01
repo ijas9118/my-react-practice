@@ -26,8 +26,16 @@ export const challengesData: Challenge[] = [
   },
   {
     title: "Chips Input",
-    description: "Create a component that allows users to input a tag(chip) and display them with dynamic deletion.",
+    description:
+      "Create a component that allows users to input a tag(chip) and display them with dynamic deletion.",
     path: "/challenges/chips-input",
+    difficulty: "Easy",
+  },
+  {
+    title: "Asterisk Field Validation",
+    description:
+      "Create a React component that allows users to input and validate required fields.",
+    path: "/challenges/asterisk-field-validation",
     difficulty: "Easy",
   },
 ];
