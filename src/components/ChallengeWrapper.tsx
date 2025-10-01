@@ -6,6 +6,12 @@ const challengeMap: Record<string, React.LazyExoticComponent<React.FC>> = {
   "counter": lazy(() => import("../challenges/counter/Counter")),
   "even-or-odd": lazy(() => import("../challenges/even-or-odd/EvenOrOdd")),
   "chips-input": lazy(() => import("../challenges/chips-input/ChipsInput")),
+  "asterisk-field-validation": lazy(
+    () => import("../challenges/asterisk-field-validation/AsteriskFieldValidation"),
+  ),
+  "frequently-asked-questions": lazy(
+    () => import("../challenges/frequently-asked-questions/FrequentlyAskedQuestions"),
+  ),
 };
 
 const ChallengeWrapper: React.FC = () => {

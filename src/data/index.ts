@@ -7,12 +7,6 @@ export interface Challenge {
 
 export const challengesData: Challenge[] = [
   {
-    title: "Countdown Timer",
-    description: "Build a countdown timer with customizable hours, minutes, and seconds.",
-    path: "/challenges/countdown-timer",
-    difficulty: "Easy",
-  },
-  {
     title: "Counter Using React",
     description: "Create a React counter with increment, decrement, and reset functionalities.",
     path: "/challenges/counter",
@@ -26,8 +20,29 @@ export const challengesData: Challenge[] = [
   },
   {
     title: "Chips Input",
-    description: "Create a component that allows users to input a tag(chip) and display them with dynamic deletion.",
+    description:
+      "Create a component that allows users to input a tag(chip) and display them with dynamic deletion.",
     path: "/challenges/chips-input",
     difficulty: "Easy",
+  },
+  {
+    title: "Asterisk Field Validation",
+    description:
+      "Create a React component that allows users to input and validate required fields.",
+    path: "/challenges/asterisk-field-validation",
+    difficulty: "Easy",
+  },
+  {
+    title: "Frequently Asked Questions",
+    description:
+      "Create a React component that displays a list of frequently asked questions as an accordian.",
+    path: "/challenges/frequently-asked-questions",
+    difficulty: "Easy",
+  },
+  {
+    title: "Countdown Timer",
+    description: "Build a countdown timer with customizable hours, minutes, and seconds.",
+    path: "/challenges/countdown-timer",
+    difficulty: "Medium",
   },
 ];
