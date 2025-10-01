@@ -1,7 +1,7 @@
 import React from "react";
 import DocsLayout from "../../layout/DocsLayout";
 
-const AsteriskFieldValidationDocs = () => {
+const AsteriskFieldValidationDocs: React.FC = () => {
   return (
     <DocsLayout
       links={{

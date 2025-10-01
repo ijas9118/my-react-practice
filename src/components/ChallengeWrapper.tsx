@@ -9,6 +9,9 @@ const challengeMap: Record<string, React.LazyExoticComponent<React.FC>> = {
   "asterisk-field-validation": lazy(
     () => import("../challenges/asterisk-field-validation/AsteriskFieldValidation"),
   ),
+  "frequently-asked-questions": lazy(
+    () => import("../challenges/frequently-asked-questions/FrequentlyAskedQuestions"),
+  ),
 };
 
 const ChallengeWrapper: React.FC = () => {
