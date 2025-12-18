@@ -1,4 +1,4 @@
-import { GithubIcon, Link } from "lucide-react";
+import { GithubIcon, ExternalLink, BookOpen } from "lucide-react";
 import React from "react";
 
 interface DocsLayoutProps {
@@ -8,38 +8,37 @@ interface DocsLayoutProps {
 
 const DocsLayout: React.FC<DocsLayoutProps> = ({ children, links }) => {
   return (
-    <div className="flex">
-      <div className="max-w-7xl w-full px-4 sm:px-6 lg:px-8 py-12">
-        {/* Task Description */}
-        <section className="mb-10">
-          <h2 className="text-2xl font-serif font-semibold text-neutral-800 mb-4">
-            Task Description
-          </h2>
-          <div className="text-neutral-700 leading-relaxed space-y-4">{children}</div>
-        </section>
+    <div className="bg-white">
+      <div className="bg-slate-50 border-b border-slate-200 px-6 py-4 flex items-center gap-2">
+        <BookOpen className="text-indigo-600" size={20} />
+        <h2 className="text-lg font-bold text-slate-900">Task Description</h2>
+      </div>
 
-        {/* Links */}
-        <div className="flex items-center space-x-3 border-t border-neutral-200 pt-6">
-          <Link className="w-5 h-5 text-neutral-600" />
-          <a
-            href={links.problemLink}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-blue-600 hover:text-blue-800 font-medium"
-          >
-            Problem Link
-          </a>
+      <div className="p-6 md:p-8">
+        <div className="prose prose-slate max-w-none text-slate-600">
+          {children}
         </div>
 
-        <div className="flex items-center space-x-3 border-neutral-200 pt-6">
-          <GithubIcon className="w-5 h-5 text-neutral-600" />
+        <div className="mt-8 pt-6 border-t border-slate-100 flex flex-wrap gap-4">
+          {links.problemLink && (
+            <a
+              href={links.problemLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-4 py-2 bg-indigo-50 text-indigo-700 rounded-lg hover:bg-indigo-100 transition-colors font-medium text-sm"
+            >
+              <ExternalLink size={16} />
+              Original Problem
+            </a>
+          )}
           <a
             href={links.githubLink}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-blue-600 hover:text-blue-800 font-medium"
+            className="inline-flex items-center gap-2 px-4 py-2 bg-slate-900 text-white rounded-lg hover:bg-slate-800 transition-colors font-medium text-sm"
           >
-            Checkout my solution
+            <GithubIcon size={16} />
+            View Source Code
           </a>
         </div>
       </div>

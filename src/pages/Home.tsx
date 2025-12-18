@@ -1,115 +1,119 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { GithubIcon } from "lucide-react";
+import { GithubIcon, ArrowRight, Code2, Zap, Layout } from "lucide-react";
 
 const Home: React.FC = () => {
   return (
-    <div className="min-h-screen ">
+    <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="py-20">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl sm:text-5xl font-serif font-bold text-neutral-900 mb-6">
-            My Frontend Machine Coding Journey
+      <section className="relative pt-20 pb-32 overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-50 border border-indigo-100 text-indigo-600 text-sm font-medium mb-8 animate-fade-in-up">
+            <span className="relative flex h-2 w-2">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-400 opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-indigo-500"></span>
+            </span>
+            New Challenges Added
+          </div>
+          
+          <h1 className="text-5xl md:text-7xl font-bold text-slate-900 tracking-tight mb-8">
+            Master Frontend <br />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-purple-600">
+              Machine Coding
+            </span>
           </h1>
-          <p className="text-lg sm:text-xl text-neutral-600 leading-relaxed mb-8">
-            Documenting my learning path through building real-world frontend challenges. Explore my
-            solutions, try them out, and check the code on GitHub.
+          
+          <p className="text-xl text-slate-600 max-w-2xl mx-auto mb-12 leading-relaxed">
+            A comprehensive collection of production-ready React challenges.
+            Level up your skills with real-world interview problems.
           </p>
-          <div className="flex justify-center gap-4">
+          
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link
               to="/challenges"
-              className="inline-block px-6 py-3 bg-blue-600 text-white font-medium rounded-md hover:bg-blue-700 transition-colors duration-200"
+              className="w-full sm:w-auto px-8 py-4 bg-slate-900 text-white rounded-full font-medium hover:bg-slate-800 transition-all duration-300 shadow-xl shadow-slate-900/20 flex items-center justify-center gap-2 group"
             >
-              Explore Challenges
+              Start Coding
+              <ArrowRight className="group-hover:translate-x-1 transition-transform" size={18} />
             </Link>
             <a
               href="https://github.com/ijas9118/my-react-practice"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center px-6 py-3 bg-neutral-800 text-white font-medium rounded-md hover:bg-neutral-900 transition-colors duration-200"
+              className="w-full sm:w-auto px-8 py-4 bg-white text-slate-700 border border-slate-200 rounded-full font-medium hover:bg-slate-50 transition-all duration-300 flex items-center justify-center gap-2"
             >
-              <GithubIcon className="w-5 h-5 mr-2" />
-              View on GitHub
+              <GithubIcon size={18} />
+              Star on GitHub
             </a>
           </div>
         </div>
       </section>
 
-      {/* Challenges Section */}
-      <section className="py-16">
+      {/* Features Grid */}
+      <section className="py-24 bg-white relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-serif font-bold text-neutral-900 mb-8 text-center">
-            Featured Challenges
-          </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            <Link
-              to="/challenges/countdown-timer"
-              className="block p-6 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow duration-200 border border-neutral-200"
-            >
-              <h3 className="text-lg font-semibold text-neutral-800">Countdown Timer</h3>
-              <p className="mt-2 text-neutral-600 text-sm">
-                A customizable timer with hours, minutes, and seconds, featuring pause, reset, and
-                notification functionality.
-              </p>
-              <span className="inline-block mt-4 text-blue-600 text-sm font-medium hover:underline">
-                Try it now
-              </span>
-            </Link>
-            {/* Placeholder for more challenges */}
-            <div className="p-6 bg-white rounded-lg shadow-sm border border-neutral-200 opacity-50">
-              <h3 className="text-lg font-semibold text-neutral-800">Coming Soon</h3>
-              <p className="mt-2 text-neutral-600 text-sm">
-                More exciting frontend challenges are on the way. Stay tuned!
-              </p>
-            </div>
-            <div className="p-6 bg-white rounded-lg shadow-sm border border-neutral-200 opacity-50">
-              <h3 className="text-lg font-semibold text-neutral-800">Coming Soon</h3>
-              <p className="mt-2 text-neutral-600 text-sm">
-                More exciting frontend challenges are on the way. Stay tuned!
-              </p>
-            </div>
+          <div className="text-center mb-16">
+            <h2 className="text-3xl font-bold text-slate-900 mb-4">Why ReactQuest?</h2>
+            <p className="text-slate-600 max-w-2xl mx-auto">
+              Designed to help you crack frontend interviews by focusing on patterns, clarity, and best practices.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              {
+                icon: <Code2 className="text-indigo-600" size={32} />,
+                title: "Real-world Scenarios",
+                desc: "Challenges based on actual interview questions from top tech companies.",
+              },
+              {
+                icon: <Layout className="text-purple-600" size={32} />,
+                title: "Production Standards",
+                desc: "Solutions written with scalability, accessibility, and performance in mind.",
+              },
+              {
+                icon: <Zap className="text-amber-500" size={32} />,
+                title: "Modern Stack",
+                desc: "Built with React 19, TypeScript, Vite, and Tailwind CSS v4.",
+              },
+            ].map((feature, idx) => (
+              <div
+                key={idx}
+                className="p-8 rounded-2xl bg-slate-50 border border-slate-100 hover:border-indigo-100 hover:shadow-xl hover:shadow-indigo-900/5 transition-all duration-300 group"
+              >
+                <div className="mb-6 p-3 bg-white rounded-xl w-fit shadow-sm group-hover:scale-110 transition-transform duration-300">
+                  {feature.icon}
+                </div>
+                <h3 className="text-xl font-bold text-slate-900 mb-3">{feature.title}</h3>
+                <p className="text-slate-600 leading-relaxed">{feature.desc}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* About Section */}
-      <section className="py-16 ">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-serif font-bold text-neutral-900 mb-6">
-            About This Journey
-          </h2>
-          <p className="text-neutral-600 leading-relaxed mb-6">
-            This website is a personal project to document my progress in mastering frontend
-            development through hands-on machine coding challenges. Each challenge is carefully
-            crafted, with solutions available to try out and source code hosted on GitHub for you to
-            explore.
-          </p>
-          <a
-            href="https://github.com/ijas9118/my-react-practice"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center text-blue-600 font-medium hover:underline"
-          >
-            <GithubIcon className="w-5 h-5 mr-2" />
-            Check out the full repository
-          </a>
-        </div>
-      </section>
-
-      {/* Call to Action */}
-      <section className="py-16">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-serif font-bold text-neutral-900 mb-6">Join My Journey</h2>
-          <p className="text-neutral-600 leading-relaxed mb-8">
-            Follow along as I tackle new challenges and share my solutions. Whether you're a
-            beginner or an experienced developer, there's something here for everyone.
-          </p>
-          <Link
-            to="/challenges"
-            className="inline-block px-6 py-3 bg-blue-600 text-white font-medium rounded-md hover:bg-blue-700 transition-colors duration-200"
-          >
-            Start Exploring
-          </Link>
+      {/* Preview Section */}
+      <section className="py-24 overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="relative rounded-3xl bg-slate-900 text-white p-12 md:p-20 overflow-hidden text-center">
+            <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_top_right,#4f46e5_0%,transparent_50%)] opacity-50" />
+            <div className="relative z-10">
+              <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready to challenge yourself?</h2>
+              <p className="text-slate-300 max-w-xl mx-auto mb-10 text-lg">
+                Dive into the collection designed to test your knowledge and improve your problem-solving skills.
+              </p>
+              <Link
+                to="/challenges"
+                className="inline-flex items-center px-8 py-4 bg-white text-slate-900 rounded-full font-bold hover:bg-indigo-50 transition-colors shadow-lg"
+              >
+                Explore Challenges
+              </Link>
+            </div>
+            
+            {/* Decorative background elements */}
+            <div className="absolute -bottom-20 -right-20 w-64 h-64 bg-purple-500 rounded-full blur-[100px] opacity-30" />
+            <div className="absolute -top-20 -left-20 w-64 h-64 bg-indigo-500 rounded-full blur-[100px] opacity-30" />
+          </div>
         </div>
       </section>
     </div>
