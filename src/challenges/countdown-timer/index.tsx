@@ -1,7 +1,5 @@
 import React, { useCallback, useEffect, useState } from "react";
 import { InputField } from "./InputField";
-import CountdownTimerDoc from "./ChallengeDescription";
-import ChallengeLayout from "../../layout/ChallengeLayout";
 
 const CountdownTimer: React.FC = () => {
   const [isRunning, setIsRunning] = useState(false);
@@ -62,7 +60,7 @@ const CountdownTimer: React.FC = () => {
   }, [isRunning, runTimer]);
 
   return (
-    <ChallengeLayout title="Countdown Timer" Docs={CountdownTimerDoc}>
+      <>
       <h3 className="text-4xl text-center font-semibold">Countdown Timer</h3>
       <div className="mt-8 flex flex-col items-center justify-center gap-8">
         <div className="flex items-center gap-3">
@@ -139,7 +137,7 @@ const CountdownTimer: React.FC = () => {
           )}
         </div>
       </div>
-    </ChallengeLayout>
+      </>
   );
 };
 

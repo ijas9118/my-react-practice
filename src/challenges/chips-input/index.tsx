@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-import ChallengeLayout from "../../layout/ChallengeLayout";
-import ChipsInputDocs from "./ChipsInputDocs";
 
 const ChipsInput: React.FC = () => {
   const [input, setInput] = useState("");
@@ -20,7 +18,6 @@ const ChipsInput: React.FC = () => {
     setChips(copy);
   };
   return (
-    <ChallengeLayout title="Chips Input" Docs={ChipsInputDocs}>
       <div className="flex flex-col items-center justify-center p-4">
         <h2 className="text-3xl font-semibold text-blue-500 mb-4">Chips Input</h2>
         <input
@@ -51,7 +48,6 @@ const ChipsInput: React.FC = () => {
           ))}
         </div>
       </div>
-    </ChallengeLayout>
   );
 };
 

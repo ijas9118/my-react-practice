@@ -1,29 +1,22 @@
-import React, { Suspense, lazy } from "react";
+import React, { Suspense } from "react";
 import { useParams } from "react-router-dom";
-
-const challengeMap: Record<string, React.LazyExoticComponent<React.FC>> = {
-  "countdown-timer": lazy(() => import("../challenges/countdown-timer/CountdownTimer")),
-  "counter": lazy(() => import("../challenges/counter/Counter")),
-  "even-or-odd": lazy(() => import("../challenges/even-or-odd/EvenOrOdd")),
-  "chips-input": lazy(() => import("../challenges/chips-input/ChipsInput")),
-  "asterisk-field-validation": lazy(
-    () => import("../challenges/asterisk-field-validation/AsteriskFieldValidation"),
-  ),
-  "frequently-asked-questions": lazy(
-    () => import("../challenges/frequently-asked-questions/FrequentlyAskedQuestions"),
-  ),
-};
+import { challengesMap } from "../utils/challenge-registry";
+import ChallengeLayout from "../layout/ChallengeLayout";
 
 const ChallengeWrapper: React.FC = () => {
   const { challengeId } = useParams<{ challengeId: string }>();
-  const Component = challengeId && challengeMap[challengeId];
+  const challenge = challengeId ? challengesMap[challengeId] : null;
 
-  if (!Component) return <div>Challenge not found</div>;
+  if (!challenge) return <div>Challenge not found</div>;
+
+  const { Component } = challenge;
 
   return (
-    <Suspense fallback={<div>Loading challenge...</div>}>
-      <Component />
-    </Suspense>
+    <ChallengeLayout challenge={challenge}>
+      <Suspense fallback={<div>Loading challenge...</div>}>
+        <Component />
+      </Suspense>
+    </ChallengeLayout>
   );
 };
 

@@ -1,6 +1,4 @@
 import { useState } from "react";
-import ChallengeLayout from "../../layout/ChallengeLayout";
-import FrequentlyAskedQuestionsDocs from "./FrequentlyAskedQuestionsDocs";
 import { faqs } from "./data";
 import { ChevronDown, ChevronUp } from "lucide-react";
 
@@ -15,7 +13,6 @@ const FrequentlyAskedQuestions = () => {
     setActive(index);
   };
   return (
-    <ChallengeLayout title="Frequently Asked Questions" Docs={FrequentlyAskedQuestionsDocs}>
       <div className="max-w-2xl mx-auto mt-10">
         <h2 className="text-2xl font-semibold text-gray-800 mb-6 text-center">
           Frequently Asked Questions
@@ -46,7 +43,6 @@ const FrequentlyAskedQuestions = () => {
           })}
         </div>
       </div>
-    </ChallengeLayout>
   );
 };
 

@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-import ChallengeLayout from "../../layout/ChallengeLayout";
-import EvenOrOddDocs from "./EvenOrOddDocs";
 
 const EvenOrOdd: React.FC = () => {
   const [num, setNum] = useState("");
@@ -24,7 +22,6 @@ const EvenOrOdd: React.FC = () => {
     }, 1000);
   };
   return (
-    <ChallengeLayout title="Even or Odd" Docs={EvenOrOddDocs}>
       <div className="flex flex-col items-center justify-center gap-4 text-center">
         <h1 className="text-2xl font-serif font-semibold">Even or Odd Checker</h1>
 
@@ -51,7 +48,6 @@ const EvenOrOdd: React.FC = () => {
           )}
         </div>
       </div>
-    </ChallengeLayout>
   );
 };
 

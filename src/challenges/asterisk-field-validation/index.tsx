@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-import AsteriskFieldValidationDocs from "./AsteriskFieldValidationDocs";
-import ChallengeLayout from "../../layout/ChallengeLayout";
 
 const AsteriskFieldValidation = () => {
   const [name, setName] = useState("");
@@ -21,7 +19,6 @@ const AsteriskFieldValidation = () => {
 
   const hasError = Object.keys(errors).length > 0;
   return (
-    <ChallengeLayout title="Asterisk Field Validation" Docs={AsteriskFieldValidationDocs}>
       <div className="flex justify-center items-start mt-10">
         <div className="w-full max-w-md bg-white shadow-md rounded-lg p-6">
           <h1 className="text-2xl font-semibold text-gray-800 mb-6 text-center">
@@ -84,7 +81,6 @@ const AsteriskFieldValidation = () => {
           )}
         </div>
       </div>
-    </ChallengeLayout>
   );
 };
 
