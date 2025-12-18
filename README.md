@@ -4,7 +4,7 @@
 
 Welcome to **ReactQuest**, a comprehensive collection of frontend machine coding challenges. This project is a personal archive of my journey mastering React, featuring production-ready solutions to common interview problems.
 
-Visit the live demo: [ReactQuest Website](https://my-react-practice-theta.vercel.app/)
+Visit the live demo: [ReactQuest Website](https://react-quest-theta.vercel.app/)
 
 ## 🌟 Key Features
 
@@ -52,12 +52,12 @@ graph TD
 
 | Challenge | Difficulty | Links | Description |
 |-----------|------------|-------|-------------|
-| **Counter** | 🟢 Easy | [Live Demo](https://my-react-practice-theta.vercel.app/challenges/counter) • [Source](./src/challenges/counter) | A simple counter with increment, decrement, and reset capabilities. |
-| **Even or Odd** | 🟢 Easy | [Live Demo](https://my-react-practice-theta.vercel.app/challenges/even-or-odd) • [Source](./src/challenges/even-or-odd) | Number parity checker with simulated async loading states. |
-| **Chips Input** | 🟢 Easy | [Live Demo](https://my-react-practice-theta.vercel.app/challenges/chips-input) • [Source](./src/challenges/chips-input) | Tag input component with creation and deletion features. |
-| **Asterisk Validation** | 🟢 Easy | [Live Demo](https://my-react-practice-theta.vercel.app/challenges/asterisk-field-validation) • [Source](./src/challenges/asterisk-field-validation) | Form validation pattern for required fields. |
-| **FAQ Accordion** | 🟢 Easy | [Live Demo](https://my-react-practice-theta.vercel.app/challenges/frequently-asked-questions) • [Source](./src/challenges/frequently-asked-questions) | Expandable/collapsible accordion component. |
-| **Countdown Timer** | 🟡 Medium | [Live Demo](https://my-react-practice-theta.vercel.app/challenges/countdown-timer) • [Source](./src/challenges/countdown-timer) | Fully functional timer with pause/resume and notification support. |
+| **Counter** | 🟢 Easy | [Live Demo](https://react-quest-theta.vercel.app/challenges/counter) • [Source](./src/challenges/counter) | A simple counter with increment, decrement, and reset capabilities. |
+| **Even or Odd** | 🟢 Easy | [Live Demo](https://react-quest-theta.vercel.app/challenges/even-or-odd) • [Source](./src/challenges/even-or-odd) | Number parity checker with simulated async loading states. |
+| **Chips Input** | 🟢 Easy | [Live Demo](https://react-quest-theta.vercel.app/challenges/chips-input) • [Source](./src/challenges/chips-input) | Tag input component with creation and deletion features. |
+| **Asterisk Validation** | 🟢 Easy | [Live Demo](https://react-quest-theta.vercel.app/challenges/asterisk-field-validation) • [Source](./src/challenges/asterisk-field-validation) | Form validation pattern for required fields. |
+| **FAQ Accordion** | 🟢 Easy | [Live Demo](https://react-quest-theta.vercel.app/challenges/frequently-asked-questions) • [Source](./src/challenges/frequently-asked-questions) | Expandable/collapsible accordion component. |
+| **Countdown Timer** | 🟡 Medium | [Live Demo](https://react-quest-theta.vercel.app/challenges/countdown-timer) • [Source](./src/challenges/countdown-timer) | Fully functional timer with pause/resume and notification support. |
 
 ## 💻 Tech Stack
 
