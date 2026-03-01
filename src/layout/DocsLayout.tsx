@@ -5,7 +5,7 @@ import React from "react";
 
 interface DocsLayoutProps {
   children: React.ReactNode;
-  links: { problemLink: string; githubLink: string };
+  links: { problemLink?: string; githubLink: string };
 }
 
 const DocsLayout: React.FC<DocsLayoutProps> = ({ children, links }) => {

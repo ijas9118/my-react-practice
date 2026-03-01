@@ -103,7 +103,7 @@ const ChallengeLayout: React.FC<ChallengeLayoutProps> = ({ challenge, children }
                <div className="flex-grow bg-white p-0">
                   <DocsLayout
                     links={{
-                      problemLink: problemLink || "#",
+                      problemLink: problemLink,
                       githubLink: githubLink,
                     }}
                   >
