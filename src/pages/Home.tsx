@@ -1,6 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { GithubIcon, ArrowRight, Code2, Zap, Layout } from "lucide-react";
+import { ArrowRight, Code2, Zap, Layout } from "lucide-react";
+import { siGithub } from "simple-icons";
+import { BrandIcon } from "../components/BrandIcon";
 
 const Home: React.FC = () => {
   return (
@@ -42,7 +44,7 @@ const Home: React.FC = () => {
               rel="noopener noreferrer"
               className="w-full sm:w-auto px-8 py-4 bg-white text-slate-700 border border-slate-200 rounded-full font-medium hover:bg-slate-50 transition-all duration-300 flex items-center justify-center gap-2"
             >
-              <GithubIcon size={18} />
+              <BrandIcon icon={siGithub} size={18} />
               Star on GitHub
             </a>
           </div>

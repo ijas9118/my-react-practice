@@ -1,6 +1,8 @@
 import React from "react";
 import { Link, Outlet, useLocation } from "react-router-dom";
-import { GithubIcon, Code2, Zap } from "lucide-react";
+import { Code2, Zap } from "lucide-react";
+import { siGithub } from "simple-icons";
+import { BrandIcon } from "../components/BrandIcon";
 
 const Layout: React.FC = () => {
   const location = useLocation();
@@ -59,7 +61,7 @@ const Layout: React.FC = () => {
                   rel="noopener noreferrer"
                   className="flex items-center gap-2 text-slate-600 hover:text-indigo-600 font-medium transition-colors duration-300"
                 >
-                  <GithubIcon size={20} />
+                  <BrandIcon icon={siGithub} size={20} />
                   <span className="text-sm">GitHub</span>
                 </a>
               </li>
@@ -94,7 +96,7 @@ const Layout: React.FC = () => {
                  href="https://github.com/ijas9118/my-react-practice"
                  className="text-slate-400 hover:text-slate-900 transition-colors"
               >
-                <GithubIcon size={20} />
+                <BrandIcon icon={siGithub} size={20} />
               </a>
             </div>
           </div>

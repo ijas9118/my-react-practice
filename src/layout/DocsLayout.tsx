@@ -1,4 +1,6 @@
-import { GithubIcon, ExternalLink, BookOpen } from "lucide-react";
+import { ExternalLink, BookOpen } from "lucide-react";
+import { siGithub } from "simple-icons";
+import { BrandIcon } from "../components/BrandIcon";
 import React from "react";
 
 interface DocsLayoutProps {
@@ -37,7 +39,7 @@ const DocsLayout: React.FC<DocsLayoutProps> = ({ children, links }) => {
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-4 py-2 bg-slate-900 text-white rounded-lg hover:bg-slate-800 transition-colors font-medium text-sm"
           >
-            <GithubIcon size={16} />
+            <BrandIcon icon={siGithub} size={16} />
             View Source Code
           </a>
         </div>
