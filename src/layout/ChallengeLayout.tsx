@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import React, { useState } from "react";
 import DocsLayout from "./DocsLayout";
 import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 import type { ChallengeData } from "../utils/challenge-registry";
 
 interface ChallengeLayoutProps {
@@ -108,6 +109,7 @@ const ChallengeLayout: React.FC<ChallengeLayoutProps> = ({ challenge, children }
                     }}
                   >
                     <ReactMarkdown
+                      remarkPlugins={[remarkGfm]}
                       components={{
                           h1: (props) => <h1 className="text-3xl font-bold mb-6 text-slate-900" {...props} />,
                           h2: (props) => <h2 className="text-xl font-bold mb-4 mt-8 text-slate-900 border-b border-slate-100 pb-2" {...props} />,
@@ -120,6 +122,26 @@ const ChallengeLayout: React.FC<ChallengeLayoutProps> = ({ challenge, children }
                           pre: (props) => <pre className="bg-slate-900 text-slate-50 p-6 rounded-xl overflow-x-auto text-sm mb-6 leading-relaxed shadow-lg" {...props} />,
                           p: (props) => <p className="mb-6 leading-7 text-slate-600" {...props} />,
                           blockquote: (props) => <blockquote className="border-l-4 border-indigo-500 pl-4 py-1 bg-indigo-50/50 rounded-r-lg italic my-6 text-slate-700" {...props} />,
+                          table: (props) => (
+                            <div className="my-8 overflow-x-auto border border-slate-200 rounded-xl">
+                              <table className="min-w-full divide-y divide-slate-200" {...props} />
+                            </div>
+                          ),
+                          thead: (props) => <thead className="bg-slate-50" {...props} />,
+                          tbody: (props) => <tbody className="divide-y divide-slate-200 bg-white" {...props} />,
+                          tr: (props) => <tr {...props} />,
+                          th: (props) => (
+                            <th 
+                              className="px-6 py-3 text-left text-xs font-semibold text-slate-600 uppercase tracking-wider" 
+                              {...props} 
+                            />
+                          ),
+                          td: (props) => (
+                            <td 
+                              className="px-6 py-4 text-sm text-slate-600" 
+                              {...props} 
+                            />
+                          ),
                       }}
                     >
                       {markdown || ""}
